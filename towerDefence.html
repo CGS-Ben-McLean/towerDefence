@@ -1178,7 +1178,7 @@
                     return arrayOfEnemiesHealth
                 }
                 
-                function archerTowerLvl1(tower, x, y, damage, towerType, constructedTower) {
+                function archerTower(lvl, tower, x, y, damage, towerType, constructedTower) {
                     range = 200
                     i = 0
                     while (i < arrayOfTowers.length) {
@@ -1190,96 +1190,14 @@
                     if (arrayOfTowers[checkForUpgradedTower + 3] != constructedTower) {
                         return i
                     }
-                    if (arrayOfTowers[checkForUpgradedTower + 2] == 1) {
+                    if (arrayOfTowers[checkForUpgradedTower + 2] == lvl) {
                         setTimeout(function(){
                             checkForHit(tower, x, y, range, damage, 0, towerType)
-                            archerTowerLvl1(tower, x, y, damage, towerType, constructedTower)
+                            archerTower(1, tower, x, y, damage, towerType, constructedTower)
                         }, 2500)
                     } else {
-                        archerTowerLvl2(tower, x, y, 30, towerType, constructedTower)
+                        archerTower(2, tower, x, y, (30 + (5*lvl)), towerType, constructedTower)
                         return i
-                    }
-                }
-                function archerTowerLvl2(tower, x, y, damage, towerType, constructedTower) {
-                    range = 200
-                    i = 0
-                    while (i < arrayOfTowers.length) {
-                        if (arrayOfTowers[i] == tower) {
-                            checkForUpgradedTower = i
-                        }
-                        i++
-                    }
-                    if (arrayOfTowers[checkForUpgradedTower + 3] != constructedTower) {
-                        return i
-                    }
-                    if (arrayOfTowers[checkForUpgradedTower + 2] == 2) {
-                        setTimeout(function(){
-                            checkForHit(tower, x, y, range, damage, 0, towerType)
-                            archerTowerLvl2(tower, x, y, damage, towerType, constructedTower)
-                        }, 2500)
-                    } else {
-                        archerTowerLvl3(tower, x, y, 35, towerType, constructedTower)
-                    }
-                }
-                function archerTowerLvl3(tower, x, y, damage, towerType, constructedTower) {
-                    range = 200
-                    i = 0
-                    while (i < arrayOfTowers.length) {
-                        if (arrayOfTowers[i] == tower) {
-                            checkForUpgradedTower = i
-                        }
-                        i++
-                    }
-                    if (arrayOfTowers[checkForUpgradedTower + 3] != constructedTower) {
-                        return i
-                    }
-                    if (arrayOfTowers[checkForUpgradedTower + 2] == 3) {
-                        setTimeout(function(){
-                            checkForHit(tower, x, y, range, damage, 0, towerType)
-                            archerTowerLvl3(tower, x, y, damage, towerType, constructedTower)
-                        }, 2500)
-                    } else {
-                        archerTowerLvl4(tower, x, y, 50, towerType, constructedTower)
-                    }
-                }function archerTowerLvl4(tower, x, y, damage, towerType, constructedTower) {
-                    range = 200
-                    i = 0
-                    while (i < arrayOfTowers.length) {
-                        if (arrayOfTowers[i] == tower) {
-                            checkForUpgradedTower = i
-                        }
-                        i++
-                    }
-                    if (arrayOfTowers[checkForUpgradedTower + 3] != constructedTower) {
-                        return i
-                    }
-                    if (arrayOfTowers[checkForUpgradedTower + 2] == 4) {
-                        setTimeout(function(){
-                            checkForHit(tower, x, y, range, damage, 0, towerType)
-                            archerTowerLvl4(tower, x, y, damage, towerType, constructedTower)
-                        }, 2500)
-                    } else {
-                        archerTowerLvl5(tower, x, y, 75, towerType, constructedTower)
-                    }
-                }function archerTowerLvl5(tower, x, y, damage, towerType, constructedTower) {
-                    range = 200
-                    i = 0
-                    while (i < arrayOfTowers.length) {
-                        if (arrayOfTowers[i] == tower) {
-                            checkForUpgradedTower = i
-                        }
-                        i++
-                    }
-                    if (arrayOfTowers[checkForUpgradedTower + 3] != constructedTower) {
-                        return i
-                    }
-                    if (arrayOfTowers[checkForUpgradedTower + 2] == 5) {
-                        setTimeout(function(){
-                            checkForHit(tower, x, y, range, damage, 0, towerType)
-                            archerTowerLvl5(tower, x, y, damage, towerType, constructedTower)
-                        }, 2500)
-                    } else {
-                        //archerTowerLvl2(tower, x, y, 35)
                     }
                 }
                 //--------------------------------------------------------------------------
