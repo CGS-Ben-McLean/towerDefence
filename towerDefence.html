@@ -459,43 +459,9 @@
                 x = x - 2/3
                 y = y - 2/3
                 
-                if (x < 100) {
-                    x = 0
-                } else if (x < 200) {
-                    x = 100
-                } else if (x < 300) {
-                    x = 200
-                } else if (x < 400) {
-                    x = 300
-                } else if (x < 500) {
-                    x = 400
-                } else if (x < 600) {
-                    x = 500
-                } else if (x < 700) {
-                    x = 600
-                } else if (x < 800) {
-                    x = 700
-                } else if (x < 900) {
-                    x = 800
-                } else {
-                    x = 900
-                }
-                
-                if (y < 100) {
-                    y = 0
-                } else if (y < 200) {
-                    y = 100
-                } else if (y < 300) {
-                    y = 200
-                } else if (y < 400) {
-                    y = 300
-                } else if (y < 500) {
-                    y = 400
-                } else if (y < 600) {
-                    y = 500
-                } else {
-                    y = 600
-                } 
+                x = Math.floor(x/100)*100
+                y = Math.floor(y/100)*100
+            	
                 console.log(x, y)
                 if (y >= 200 && y < 300 && x >= 0 && x < 300) {
                     alert("You cannot build a tower on roads!")
